@@ -12,7 +12,7 @@
 ### Production Azure VM Machine
 Provisioned a windows Azure VM Machine setup in uk south with local standard hdd.
 Connect via RDP, installed SQL Server and SSMS to resotre the renowned Microsoft SQL Server database known as AdventureWorks.
-
+Migrated the database from the VM Machine to the SQL Database on the Azure SQL Server, data seems intact
 ## Installation instructions
 
 ## Usage instructions
