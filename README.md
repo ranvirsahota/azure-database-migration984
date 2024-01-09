@@ -19,7 +19,17 @@
 - Automted backup to take place every sunday with no end
 
 ## Disaster Recovery Simulation
-- DELETE TOP (5000) FROM Person.EmailAddress
-- DROP TABLE Production.TransactionHistory
-- DROP TABLE Production.TransactionHistoryArchive
-- DROP TABLE HumanResources.Department
+- DELETE TOP (10000) FROM Person.EmailAddress;
+- DROP TABLE Production.TransactionHistory;
+- DROP TABLE Production.TransactionHistoryArchive;
+- ALTER TABLE HumanResources.Department DROP CONSTRAINT DF_Department_ModifiedDate;
+- DROP TABLE Person.PersonPhone;
+- DROP TABLE Production.ProductCostHistory, Production.ProductInventory, Production.ProductReview;
+
+The above list is what was destroyed in the disaster simulation. This has been recoved due to take backups take by azure. The resotoration process took 2 hours.
+
+## Geo Replication and Failover
+- Created a replica database of the production database, hosted on a new SQL server in the east of the US, all other paramaters are default the same as the primary
+- Executed failover and reverted no data loss observed and both transistions were executed in under 5 minutes
+
+## Microsoft Entra Directory Integration
