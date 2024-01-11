@@ -38,4 +38,5 @@ The above list is what was destroyed in the disaster simulation. This has been r
     - 'Login failed for user '<token-identified principal>'
 - I found the resolution to the error to be specificing in the connection parameters which database I intended to connect to. As it turns out Azure Data Studio defualt is to attempt to connect first to the 'masterdb'. Following the steps on this link helped me find a solution: https://techcommunity.microsoft.com/t5/azure-database-support-blog/aad-auth-error-login-failed-for-user-lt-token-identified/ba-p/1417535
 
-With this the migration is compelete
+## UML DIAGRAM OF AZURE DATABASE MIGRATION PROJECT
+![UML DIAGRAM MISSING](azure_project_diagram.png)
