@@ -33,3 +33,9 @@ The above list is what was destroyed in the disaster simulation. This has been r
 - Executed failover and reverted no data loss observed and both transistions were executed in under 5 minutes
 
 ## Microsoft Entra Directory Integration
+- Configured Azure SQL Server to accept Microsoft Entra ID, set myself as admin. This was verfied by establsihing a connection to the SQL Server in the production VM. I did have some initial difficulty with process, I forgot to click save button. When the authentication failed I went back to the tutorial and saw my error.
+- Create a new user named 'sukuna_db_datareader' as their user principal name and ran an SQL query to db_datareader role to sukuna. I then went to connect to the SQL Server as sukuna but came across an error:
+    - 'Login failed for user '<token-identified principal>'
+- I found the resolution to the error to be specificing in the connection parameters which database I intended to connect to. As it turns out Azure Data Studio defualt is to attempt to connect first to the 'masterdb'. Following the steps on this link helped me find a solution: https://techcommunity.microsoft.com/t5/azure-database-support-blog/aad-auth-error-login-failed-for-user-lt-token-identified/ba-p/1417535
+
+With this the migration is compelete
